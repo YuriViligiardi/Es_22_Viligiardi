@@ -13,10 +13,12 @@
     $listaVideo = array($v1, $v2, $v3);
     inserisciVideoYoutube($listaVideo[0], 50, 250);
 
-    function inserisciVideoYoutube($v, $larPerc, $altPx){
+    function inserisciVideoYoutube($v, $altPx, $larPerc){
         echo "<h2>$v[titolo]</h2>";
-        echo "<iframe src='https://www.youtube.com/watch?v=" . $v["idVideo"] . "' height='$altPx %' width='$larPerc px' ></iframe>";
+        echo "<iframe height='$altPx %' width='$larPerc px' src='https://www.youtube.com/watch?v=" . $v["idVideo"] . "'></iframe>";
     }
+
+    
     ?>
 </body>
 </html>
