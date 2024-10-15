@@ -11,11 +11,19 @@
     $v2 = array("titolo" => "ACCADONO COSE EP:17", "idVideo" => "-qcgdussKDQ");
     $v3 = array("titolo" => "I PIU' SCORRETTI CAMPIONI di Formula 1", "idVideo" => "MpPuEj7RuQs");
     $listaVideo = array($v1, $v2, $v3);
-    inserisciVideoYoutube($listaVideo[0], 50, 250);
+    //inserisciVideoYoutube($listaVideo[0], 50, 250);
+    $alt = 250;
+    $lar = 50;
+    
+    foreach ($listaVideo as $key) {
+        inserisciVideoYoutube($key, $alt, $lar);
+        $alt += 125;
+        $lar += 25;
+    }
 
     function inserisciVideoYoutube($v, $altPx, $larPerc){
-        echo "<h2>$v[titolo]</h2>";
-        echo "<iframe height='$altPx %' width='$larPerc px' src='https://www.youtube.com/watch?v=" . $v["idVideo"] . "'></iframe>";
+        echo "<h2>" . $v["titolo"] . "</h2>";
+        echo "<iframe height='{$altPx}px' width='{$larPerc}%' src='https://www.youtube.com/embed/" . $v["idVideo"] . "'></iframe>";
     }
 
     
